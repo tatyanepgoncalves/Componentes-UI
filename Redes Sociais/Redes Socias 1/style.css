@@ -1,0 +1,82 @@
+*, *::before, *::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: #e9d5ff;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+}
+
+.icon {
+  text-decoration: none;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.icon > i {
+  color: #fff;
+  font-size: 32px;
+  transition: all 0.2s;
+}
+
+.icon::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 100%;
+  background: linear-gradient(220.55deg, #9333ea 0%, #be6fff 100%);
+  scale: 1;
+  z-index: -1;
+  transition: all 400ms ease-out;
+}
+
+.icon:hover::before {
+  scale: 0;
+}
+
+.icon:hover i {
+  color: transparent;
+  background: linear-gradient(220.55deg, #9333ea 0%, #be6fff 100%);
+  background-clip: text;
+  display: inline-block;
+}
+
+footer {
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  color: #94a3b8;
+  position: absolute;
+  bottom: 20px;
+
+
+  a {
+    color: #334155;
+    font-weight: 600;
+    text-decoration: none;
+  }
+}
+
+@media (width <= 991px) {
+  .wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
